@@ -134,12 +134,9 @@
                             <h5>Usuarios</h5>
                         </div>
                         <div style="margin-left: 0.7cm; margin-top: 10px; margin-bottom: 10px;">
-                            <button id="btnNuevo" class="btn btn-outline-info" data-bs-toggle="modal" type="button"
-                                data-bs-target="#staticBackdrop" title="Nuevo usuario"><i
-                                    class="bi bi-plus-circle"></i><span> Nuevo Usuario</span>
-                            </button>
-                            <button id="btnUser" type="button" class="btn btn-primary" data-bs-toggle="modal">
-                                Launch demo modal
+                            <button type="button" id="btnUser" class="btn btn-outline-info" data-bs-toggle="modal">
+                                <i
+                                class="bi bi-plus-circle"></i><span> Nuevo Usuario</span>
                               </button>
                         </div>
                         <div class="col-md-12">
@@ -183,80 +180,57 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="modal fade" id="modalUsers" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          ...
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                      </div>
+        </section>
+        <section>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header bg-info">
+                      <h5 class="modal-title" style="color: aliceblue;" id="exampleModalLabel" >Registro de usuarios</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <form id="formUsers">
+                            <input id="id" type="hidden" />
+                            <div class="form-group col-md-10 offset-md-1">
+                                <label>Cargo</label>
+                                <input id="position" type="text" class="form-control inputcenter" required/>
+                            </div>
+                            <div class="form-group col-md-4 offset-md-4">
+                                <label>Num. de Empleado</label>
+                                <input id="employee" type="number" class="form-control inputcenter" required/>
+                            </div>
+                            <div class="row justify-content-around form-group">
+                                <div class="col-6">
+                                    <label>Nombre(s)</label>
+                                    <input id="name" type="text" class="form-control inputcenter" required/>
+                                </div>
+                                <div class="col-6">
+                                    <label>Apellidos</label>
+                                    <input id="surnames" type="text" class="form-control inputcenter" required/>
+                                </div>
+                              </div>
+                            <div class="form-group">
+                                <label>Correo elécronico</label>
+                                <input id="email" type="text" class="form-control inputcenter" required/>
+                            </div>
+                            <div class="form-group">
+                                <label>Contraseña</label>
+                                <input id="password" type="password" class="form-control inputcenter" required/>
+                            </div>
+                            <div class="form-group col-md-4 offset-md-4">
+                                <label>Número de teléfono</label>
+                                <input type="number" id="number" maxlength="10" class="form-control inputcenter" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-info">Guardar</button>
                     </div>
                   </div>
-
-
-
-
-
-
-
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header bg-info" style="color: aliceblue;">
-                                <h5 class="modal-title" id="staticBackdropLabel">Registro de Usuarios</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body" style="text-align: center;">
-                                <input id="id" type="hidden" />
-                                <div class="form-group col-md-10 offset-md-1">
-                                    <label>Cargo</label>
-                                    <input id="position" type="text" class="form-control inputcenter" required/>
-                                </div>
-                                <div class="form-group col-md-4 offset-md-4">
-                                    <label>Num. de Empleado</label>
-                                    <input id="employee" type="number" class="form-control inputcenter" required/>
-                                </div>
-                                <div class="row justify-content-around form-group">
-                                    <div class="col-6">
-                                        <label>Nombre(s)</label>
-                                        <input id="name" type="text" class="form-control inputcenter" required/>
-                                    </div>
-                                    <div class="col-6">
-                                        <label>Apellidos</label>
-                                        <input id="surnames" type="text" class="form-control inputcenter" required/>
-                                    </div>
-                                  </div>
-                                <div class="form-group">
-                                    <label>Correo elécronico</label>
-                                    <input id="email" type="text" class="form-control inputcenter" required/>
-                                </div>
-                                <div class="form-group">
-                                    <label>Contraseña</label>
-                                    <input id="password" type="password" class="form-control inputcenter" required/>
-                                </div>
-                                <div class="form-group col-md-4 offset-md-4">
-                                    <label>Número de teléfono</label>
-                                    <input type="number" maxlength="10" class="form-control inputcenter" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required />
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" id="usernew" class="btn btn-info" style="color:white;">Agregar</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+              </div>
         </section>
     </main>
     <footer id="footer" class="footer">
@@ -270,10 +244,9 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script   script src="../assets/js/app.js
-"></script>
-    <script src="../assets/js/main.js"></script>
+            <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>   
+            <script src="../assets/js/app.js"></script>
+            <script src="../assets/js/main.js"></script>
 </body>
 
 </html>
