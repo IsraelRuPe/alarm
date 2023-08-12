@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Alcaldia - Cuajimalpaplus</title>
+    <link rel="shortcut icon" href="../assets/img/cal.png">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="../index.html" class="logo d-flex align-items-center">
+                <img src="../assets/img/plus2.png">
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn" id="toggleAside"></i>
+        </div>
+        <div style="margin-left: 25%;">
+            <a href="../index.html" class="centro d-flex align-items-center">
+                <span class="d-none d-lg-block" >Alcaldia Cuajimalpa De Morelos</span>
+            </a>
+        </div>
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown pe-3">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="../assets/img/logo.png" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Juan Rodolfo</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Juan Rodolfo</h6>
+                            <span>Comandante</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-person"></i>
+                                <span>Mi Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Cerrar Sesion</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item">
+                <a class="nav-link " href="../index.html">
+                    <i class="bi bi-columns-gap"></i>
+                    <span>Panel de Control</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-person"></i><span>Usuarios
+                    </span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../usuarios/index.html">
+                            <i class="bi bi-circle"></i><span>Ver Usuarios</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-journals"></i><span>Bitacoras</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="../bitacoras/index.html">
+                            <i class="bi bi-circle"></i><span>Ver historial</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <div style="text-align: center;">
+                <li class="nav-heading"
+                    style="font-size: 12px; color: black; font-family: Georgia, 'Times New Roman', Times, serif;">Estado
+                    De
+                    la Alcaldia </li><br>
+            </div>
+            <div style="text-align: center;">
+                <li class="nav-item">
+                    <i class="bi bi-power"></i>
+                    <span>#</span>
+                </li><br>
+            </div>
+        </ul>
+    </aside>
+
+    <main id="main" class="main section_contenido">
+
+        <div class="pagetitle">
+            <h1 class="banderg">Panel Incidencias</h1>
+            <h1>Bitacora</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+                    <li class="breadcrumb-item active">Bitacoras</li>
+                </ol>
+            </nav>
+        </div>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div style="width: 100%;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Historial </h5>
+                            </div>
+                            <div style="text-align:center;margin-left:15px;">
+                                <div id="tablaClients_filter">
+                                    <label style="color: rgb(28, 198, 250);">Search:
+                                        <form class="form-inline">
+                                            <input type="search" class="form-control form-control-sm"
+                                                pattern="^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$"
+                                                title="El formato de búsqueda debe ser dd/MM/yyyy"
+                                                placeholder="Ejemplo: 12/07/2023" inputmode="numeric"
+                                                aria-controls="tablaClients"
+                                                style="text-align:center; border-color: rgb(28, 198, 250);">
+                                            <button class="btn btn-outline-info my-0 my-sm-2"
+                                                type="submit">Search</button>
+                                        </form>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <table class="table" style="text-align: center;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Uid</th>
+                                            <th scope="col">Hora y fecha</th>
+                                            <th scope="col">Usuario en Peligro</th>
+                                            <th scope="col">Coordenas</th>
+                                            <th scope="col">Placas</th>
+                                            <th scope="col">Opciones</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>10:30 16/07/2023</td>
+                                            <td>Pasajero</td>
+                                            <td>19.27952659303763, -99.65951838265379</td>
+                                            <td>ABCD-1234</td>
+                                            <td>
+                                                <div class="wrapper text-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-outline-info"
+                                                            data-bs-target="#staticBackdrop" data-bs-toggle="modal"
+                                                            title="Ver más"><i class="bi bi-eye"></i></button>
+                                                        <button class="btnBorrar btn btn-outline-danger"
+                                                            data-ds-toggle="tooltip" title="Eliminar"><i
+                                                                class="bi bi-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header bg-info" style="color: aliceblue;">
+                                <h5 class="modal-title" id="staticBackdropLabel">Más detalles</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>Identificador del siniestro</label>
+                                    <input id="id" type="number" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>hora y Fecha</label>
+                                    <input id="datatime" type="datetime-local" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Usuario en peligro</label>
+                                    <input id="userdanger" type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Cordenadas</label>
+                                    <input id="position" type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Placas</label>
+                                    <input id="plates" type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Usuario</label>
+                                    <input id="user" type="text" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Conductor</label>
+                                    <input id="driver" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-info">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Net Rabbit</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="https://netrabbir.online">Net Rabbit</a>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
