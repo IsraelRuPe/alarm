@@ -1,3 +1,4 @@
+//recolecta los id
 const id = document.getElementById('id');
 const position = document.getElementById('position');
 const employee = document.getElementById('employee');

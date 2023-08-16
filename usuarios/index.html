@@ -144,8 +144,7 @@
                             <table class="table" style="text-align: center;" id="tablaDatos">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Id</th>
-                                        <th scope="col"># de Empleado</th>
+                                        <th scope="col">Num. de Empleado</th>
                                         <th scope="col">Puesto</th>
                                         <th scope="col">Nombre Completo</th>
                                         <th scope="col">Correo Electronico</th>
@@ -206,11 +205,12 @@
                                         oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                         required />
                                 </div>
-                            </form>
+                           
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                             <button type="button" id="guardarBtn" class="btn btn-info">Guardar</button>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -228,11 +228,7 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
-    
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
-    <script type="module" src="../assets/js/app.js"></script>
+    <script type="module" src="../assets/js/modal.js"></script>
     <script type="module" src="../assets/js/general.js"></script>
     <script src="../assets/js/main.js"></script>
     <script type="module" src="../assets/js/edit.js"></script>

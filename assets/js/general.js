@@ -1,6 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 // Inicializa Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 const firebaseConfig = {
     apiKey: "AIzaSyBBLu0UzOW8yCK-1l9l_36VwoYNiTxhPI0",
     authDomain: "alarma-3442f.firebaseapp.com",
@@ -11,8 +11,8 @@ const firebaseConfig = {
   };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const usuariosCollection = collection(db, "usuarios");
-
+const usuariosCollection = collection(db, "safety_users");
+//Crear usuario en firebase
 document.getElementById("guardarBtn").addEventListener("click", () => {
   const position = document.getElementById("position").value;
   const employee = document.getElementById("employee").value;
@@ -21,7 +21,6 @@ document.getElementById("guardarBtn").addEventListener("click", () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const number = document.getElementById("number").value;
-
   addDoc(usuariosCollection, {
     position,
     employee,
@@ -34,9 +33,7 @@ document.getElementById("guardarBtn").addEventListener("click", () => {
   .then(() => {
     alert("Usuario creado con éxito.");
     // Limpia el formulario
-    document.getElementById("formUsers").reset();
-    const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
-    modal.hide();
+   location.reload();
   })
     .catch(error => {
       console.error("Error al crear el usuario:", error);
