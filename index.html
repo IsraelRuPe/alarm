@@ -115,6 +115,11 @@
     <main id="main" class="main section_contenido">
         <div class="pagetitle">
             <h1 class="banderg">Panel Incidencias</h1>
+            <div class="banderg">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Bontón De Panico
+                </button>
+            </div>
             <h1>Panel de Control</h1>
             <nav>
                 <ol class="breadcrumb">
@@ -174,7 +179,25 @@
             </div>
         </section>
         <section>
-            
+            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger" style="justify-content: center;">
+                            <h5 class="modal-title w-100 text-center" style="color: aliceblue;" id="exampleModalLabel">
+                                EMERGENCIA</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" style="text-align: center;">
+                            <audio id="audio" src="assets/img/gif/alarma.mp3" preload="auto"></audio>
+                            <img src="assets/img/gif/help-4.gif" alt="">
+                        </div>
+                        <div class="modal-footer" style="justify-content: center;">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer id="footer" class="footer">
@@ -188,8 +211,10 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8 /dist/umd/popper.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script  type="text/javascript" src="./assets/js/scriptmap.js"></script>
+    <script type="text/javascript" src="./assets/js/scriptmap.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKqSfwKDjXv1O_cieyrOi8llAaS2B-34&callback=initMap"></script>
 </body>

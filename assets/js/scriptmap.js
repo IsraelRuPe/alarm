@@ -48,5 +48,6 @@ function initMap() {
 
 
   var bounds = new google.maps.LatLngBounds();
+  bounds.extend(marker1);
   map.fitBounds(bounds);
 }

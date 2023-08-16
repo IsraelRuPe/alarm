@@ -7,7 +7,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const number = document.getElementById('number');
 
-
+//abrir modal y lipiar datos
 const btnUser = document.getElementById('btnUser');
 const formUsers = document.getElementById('formUsers');
 btnUser.addEventListener('click', () => {
@@ -28,3 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
         myModal.show();
     });
 });
+//Funcon del sonido para el modal
+// $(document).ready(function() {
+//     $('#exampleModal').on('show.bs.modal', function() {
+//       document.getElementById('audio').play();
+//     });
+//     $('#exampleModal').on('hidden.bs.modal', function() {
+//       document.getElementById('audio').pause();
+//       document.getElementById('audio').currentTime = 0;
+//     });
+//   });
