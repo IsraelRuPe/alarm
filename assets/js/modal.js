@@ -21,21 +21,11 @@ email.value = '';
 password.value = '';
 number.value = '';})
 
-document.addEventListener('DOMContentLoaded', function() {
-    const btnUser = document.getElementById('btnUser');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const btnUser = document.getElementById('btnUser');
 
-    btnUser.addEventListener('click', () => {
-        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-        myModal.show();
-    });
-});
-//Funcon del sonido para el modal
-// $(document).ready(function() {
-//     $('#exampleModal').on('show.bs.modal', function() {
-//       document.getElementById('audio').play();
+//     btnUser.addEventListener('click', () => {
+//         const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+//         myModal.show();
 //     });
-//     $('#exampleModal').on('hidden.bs.modal', function() {
-//       document.getElementById('audio').pause();
-//       document.getElementById('audio').currentTime = 0;
-//     });
-//   });
+// });

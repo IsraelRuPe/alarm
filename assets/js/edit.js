@@ -1,6 +1,6 @@
 //Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+import { getFirestore, collection, getDocs, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyBBLu0UzOW8yCK-1l9l_36VwoYNiTxhPI0",
   authDomain: "alarma-3442f.firebaseapp.com",
@@ -11,10 +11,10 @@ const firebaseConfig = {
 }
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const safety_usersRef = collection(db, 'safety_users');
-
-//Recolectra datos de firebase y mostrarlos
-getDocs(safety_usersRef)
+const safety_users = collection(db, 'safety_users');
+document.addEventListener("DOMContentLoaded", function () {
+//Recolectra datos de firebase 
+getDocs(safety_users)
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       const data = doc.data();
@@ -41,23 +41,55 @@ getDocs(safety_usersRef)
       <td>${correo}</td>
       <td>${number}</td>
       <td>
-      <button type="button" data-id="${id}" onclick="openmodal('+id+')" id="editar" class="btn btn-outline-info" data-bs-target="#exampleModal" data-bs-toggle="modal" title="Editar"><i class="bi bi-pencil-square"></i>
+      <button type="button" data-id="${id}"  id="editar" class="btn btn-outline-info" data-bs-target="#exampleModal" data-bs-toggle="modal" title="Editar"><i class="bi bi-pencil-square"></i>
       </button>
-      <button type="button" data-id="${id}" id="borrar" class="btn btn-outline-danger" title="Eliminar"><i class="bi bi-trash"></i>
-      </button>
+      <button type="button" data-id="${id}" id="borrar" class="btn btn-outline-danger" title="Eliminar"><i class="bi bi-trash"></i></button>
       </td>
     </tr>`;
-  document.getElementById("tablaDatos").getElementsByTagName('tbody')[0].innerHTML += fila;
+      document.getElementById("tablaDatos").getElementsByTagName('tbody')[0].innerHTML += fila;
     });
   })
   .catch((error) => {
     console.error("Error getting documents: ", error);
   });
+  
+  document.getElementById("tablaDatos").addEventListener("click", function(event) {
+    const target = event.target;
+    if (target.matches("#editar")) {
+        console.log("editar")
+    } else 
+    if (target.matches("#borrar")) {
+      console.log("borrar")
+    }
+});
+});
+  // document.getElementById("tablaDatos").addEventListener("click", function (event) {
+  //   const target = event.target;
+  
+  //   //  botón "editar" 
+  //   if (target.matches("#editar")) {
+  //     const documentId = target.getAttribute("data-id");
+  //     // Lógica para manejar la edición
+  //     console.log("Editar empleado con ID:", documentId);
+  //     // Abre el modal de edición si es necesario
+  //   }
+  
+  //   // botón "borrar" 
+  //   if (target.matches("#borrar")) {
+  //     const documentId = target.getAttribute("data-id");
+    
+  //     console.log("Eliminar empleado con ID:", documentId);
+      
+  //     // Eliminar documento
+  //     deleteDoc(doc(safety_users, documentId))
+  //       .then(() => {
+  //         console.log("Documento eliminado correctamente.");
+  //         location.reload();
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error al eliminar el documento: ", error);
+  //       });
+  //   }
+  // });
 
-function openmodal(id){
-  if (id == 0){
-    document.getElementById("Modaltitle").innerHTML = "Añadir Usuarios"
-  }else {
-    document.getElementById("Modaltitle").innerHTML = "Modificar Usuarios"
-  }
-}
+
