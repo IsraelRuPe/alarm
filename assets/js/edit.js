@@ -41,7 +41,7 @@ getDocs(safety_usersRef)
       <td>${correo}</td>
       <td>${number}</td>
       <td>
-      <button type="button" data-id="${id}" id="editar" class="btn btn-outline-info" data-bs-target="#exampleModal" data-bs-toggle="modal" title="Editar"><i class="bi bi-pencil-square"></i>
+      <button type="button" data-id="${id}" onclick="openmodal('+id+')" id="editar" class="btn btn-outline-info" data-bs-target="#exampleModal" data-bs-toggle="modal" title="Editar"><i class="bi bi-pencil-square"></i>
       </button>
       <button type="button" data-id="${id}" id="borrar" class="btn btn-outline-danger" title="Eliminar"><i class="bi bi-trash"></i>
       </button>
@@ -54,3 +54,10 @@ getDocs(safety_usersRef)
     console.error("Error getting documents: ", error);
   });
 
+function openmodal(id){
+  if (id == 0){
+    document.getElementById("Modaltitle").innerHTML = "Añadir Usuarios"
+  }else {
+    document.getElementById("Modaltitle").innerHTML = "Modificar Usuarios"
+  }
+}

@@ -40,10 +40,10 @@ function initMap() {
   }
 
   // Actualizar la ubicación inicial
-  updateLocation();
+ updateLocation();
 
   // Actualizar la ubicación periódicamente cada 10 segundos (puedes ajustar el tiempo según tus necesidades)
-  setInterval(updateLocation, 10000);
+  // setInterval(updateLocation, 10000);
 
 
 
