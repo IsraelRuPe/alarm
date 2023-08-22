@@ -20,12 +20,3 @@ surnames.value = '';
 email.value = '';
 password.value = '';
 number.value = '';})
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const btnUser = document.getElementById('btnUser');
-
-//     btnUser.addEventListener('click', () => {
-//         const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-//         myModal.show();
-//     });
-// });

@@ -12,6 +12,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const safety_users = collection(db, 'safety_users');
+
 document.addEventListener("DOMContentLoaded", function () {
 //Recolectra datos de firebase 
 getDocs(safety_users)
@@ -52,16 +53,39 @@ getDocs(safety_users)
   .catch((error) => {
     console.error("Error getting documents: ", error);
   });
-  
   document.getElementById("tablaDatos").addEventListener("click", function(event) {
     const target = event.target;
+    
     if (target.matches("#editar")) {
-        console.log("editar")
-    } else 
-    if (target.matches("#borrar")) {
-      console.log("borrar")
+      // Encuentra la fila que contiene el botón de editar
+      const fila = target.closest("tr");
+      
+      // Obtén el ID del usuario de la fila
+      const userId = fila.getAttribute("data-id");
+      
+      // Busca los datos del usuario en Firestore usando el ID
+      const userDocRef = doc(db, "safety_users", userId);
+      
+      getDocs(userDocRef).then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          document.getElementById("position").value = data.position;
+          document.getElementById("employee").value = data.employee;
+          document.getElementById("name").value = data.name;
+          document.getElementById("surnames").value = data.surnames;
+          document.getElementById("email").value = data.email;
+          document.getElementById("number").value = data.number;
+          
+          // Abre el modal
+          modal.style.display = "block";
+        });
+      }).catch((error) => {
+        console.error("Error getting user document: ", error);
+      });
+    } else if (target.matches("#borrar")) {
+      console.log("borrar");
     }
-});
+  });
 });
   // document.getElementById("tablaDatos").addEventListener("click", function (event) {
   //   const target = event.target;
